@@ -17,6 +17,19 @@ contract IntroductionToSolidity {
         // Initializes the string value
         value = "myValue";
     }
+
+    // Public function to set the string value, accessible only by the owner
+    function set(string memory _value) public {
+        // Checks if the transaction sender is the owner
+        if(msg.sender != owner) 
+            // If it's not the owner, revert the transaction and emit the Unauthorized error
+            revert Unauthorized();
+
+        // If it's the owner, set the new string value
+        value = _value;
+    }
+
+    // Modifier to restrict access only to the owner
     modifier onlyOwner() {
         // Checks if the transaction sender is the owner
         require(msg.sender == owner, 'only admin');
