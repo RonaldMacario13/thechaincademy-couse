@@ -17,4 +17,12 @@ contract IntroductionToSolidity {
         // Initializes the string value
         value = "myValue";
     }
+    modifier onlyOwner() {
+        // Checks if the transaction sender is the owner
+        require(msg.sender == owner, 'only admin');
+
+        // Executes the remaining code of the called function
+        _;
+    }
+
 }
