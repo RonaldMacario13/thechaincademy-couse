@@ -18,6 +18,11 @@ contract IntroductionToSolidity {
         value = "myValue";
     }
 
+    // Public function that returns the string value, accessible only by the owner
+    function get() public view onlyOwner() returns(string memory) {
+        return value;
+    }
+
     // Public function to set the string value, accessible only by the owner
     function set(string memory _value) public {
         // Checks if the transaction sender is the owner
