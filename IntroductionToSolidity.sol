@@ -6,4 +6,10 @@ error Unauthorized();
 
 contract IntroductionToSolidity {
 
+    // Declaration of a state variable to store a string
+    string value;
+
+    // Declaration of a state variable to store the contract owner's address
+    address owner = msg.sender;
+
 }
