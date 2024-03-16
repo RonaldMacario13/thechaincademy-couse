@@ -12,4 +12,9 @@ contract IntroductionToSolidity {
     // Declaration of a state variable to store the contract owner's address
     address owner = msg.sender;
 
+    // Constructor function that runs once when the contract is deployed
+    constructor() {
+        // Initializes the string value
+        value = "myValue";
+    }
 }
