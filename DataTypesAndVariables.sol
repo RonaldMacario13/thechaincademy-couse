@@ -26,4 +26,19 @@ contract BasicNFT {
         // Set the contract owner
         owner = msg.sender;
     }
+
+    // Function to mint a new NFT
+    function mintNFT(uint256 _tokenId, string memory _tokenURI) public {
+        // Checks if the caller is the owner
+        require(msg.sender == owner, "Only the owner can mint NFTs");
+        // Checks if the token ID is not already in use
+        require(nfts[_tokenId].owner == address(0), "Token ID already exists");
+
+        // Create a new NFT with the given token ID and token URI
+        NFT memory newNFT = NFT(msg.sender, _tokenURI);
+        nfts[_tokenId] = newNFT;
+
+        // Emit an event for the minted NFT
+        emit NFTMinted(_tokenId, msg.sender, _tokenURI);
+    }
 }
