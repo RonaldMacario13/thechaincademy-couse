@@ -14,4 +14,8 @@ contract BasicNFT {
 
     // Mapping from token ID to NFT
     mapping(uint256 => NFT) public nfts;
+
+    // Declaration of a state variable to store the contract owner's address
+    address public owner;
+
 }
