@@ -51,4 +51,9 @@ contract BasicNFT {
         nfts[_tokenId].owner = _newOwner;
     }
 
+    // Function to get the owner of an NFT
+    function getOwner(uint256 _tokenId) public view returns (address) {
+        return nfts[_tokenId].owner;
+    }
+
 }
