@@ -17,4 +17,8 @@ contract BasicNFT {
 
     // Mapping to store minting permissions
     mapping(address => bool) public minters;
+
+    // Declaration of a state variable to store the contract owner's address
+    address public owner;
+
 }
