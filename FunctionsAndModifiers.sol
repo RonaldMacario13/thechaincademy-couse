@@ -32,4 +32,9 @@ contract BasicNFT {
         minters[msg.sender] = true;
     }
 
+    // Modifier to check if the caller is the owner
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only the owner can perform this action");
+        _;
+    }
 }
