@@ -11,4 +11,7 @@ contract BasicNFT {
         address owner;
         string tokenURI;
     }
+
+    // Mapping from token ID to NFT
+    mapping(uint256 => NFT) public nfts;
 }
