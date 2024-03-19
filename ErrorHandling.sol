@@ -24,4 +24,11 @@ contract BasicNFT {
     // Event emitted when a new NFT is minted
     event NFTMinted(uint256 indexed tokenId, address indexed owner, string tokenURI);
 
+    // Constructor function that runs once when the contract is deployed
+    constructor() {
+        // Set the contract owner
+        owner = msg.sender;
+        // Allow owner to mint NFTs by default
+        minters[msg.sender] = true;
+    }
 }
