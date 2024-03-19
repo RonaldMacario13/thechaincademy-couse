@@ -29,4 +29,9 @@ abstract contract People {
         }
     }
 
+    constructor (uint256 _age) {
+        age = _age;
+    }
+
+}
 }
