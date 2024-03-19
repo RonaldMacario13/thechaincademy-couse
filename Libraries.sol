@@ -13,4 +13,9 @@ contract Library {
     // Declaring a public state variable to store the result of the subtraction operation
     uint256 public result;
 
+    // Function to subtract two uint256 numbers
+    function sub(uint256 _a, uint256 _b) external {
+        // Performing the subtraction operation using the sub function from SafeMath library
+        result = _a.sub(_b);
+    }
 }
