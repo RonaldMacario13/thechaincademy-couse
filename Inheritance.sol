@@ -9,5 +9,11 @@ abstract contract People {
         return age;
     }
 
+    function yearPasses() public virtual returns (string memory) {
+         string memory message = "Happy Birthday!";
+        age++;
+        return message;
+    }
+
 
 }
