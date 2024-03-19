@@ -43,4 +43,8 @@ contract Person is People {
         return message;
     }
 
+    constructor(uint256 _age) People(_age) {
+
+    }
+
 }
