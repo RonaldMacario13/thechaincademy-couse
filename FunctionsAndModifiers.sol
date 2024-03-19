@@ -70,4 +70,10 @@ contract BasicNFT {
     function getOwner(uint256 _tokenId) public view returns (address) {
         return nfts[_tokenId].owner;
     }
+
+    // Function to get the token URI of an NFT
+    function getTokenURI(uint256 _tokenId) public view returns (string memory) {
+        return nfts[_tokenId].tokenURI;
+    }
+
 }
