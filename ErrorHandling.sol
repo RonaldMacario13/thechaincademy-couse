@@ -38,4 +38,10 @@ contract BasicNFT {
         _;
     }
 
+    // Modifier to check if the caller is allowed to mint NFTs
+    modifier onlyMinter() {
+        require(minters[msg.sender], "You are not authorized to mint NFTs");
+        _;
+    }
+
 }
