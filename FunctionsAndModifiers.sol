@@ -6,4 +6,10 @@ error Unauthorized();
 
 contract BasicNFT {
 
+    // Define a struct to represent an NFT
+    struct NFT {
+        address owner;
+        string tokenURI;
+    }
+
 }
