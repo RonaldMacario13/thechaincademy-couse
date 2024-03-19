@@ -37,4 +37,10 @@ abstract contract People {
 
 contract Person is People {
 
+    function yearPasses() public override returns (string memory) {
+         string memory message = "Congratulations, Happy Birthday!";
+        age++;
+        return message;
+    }
+
 }
