@@ -57,4 +57,12 @@ contract BasicNFT {
         emit NFTMinted(_tokenId, msg.sender, _tokenURI);
     }
 
+    // Function to transfer ownership of an NFT
+    function transferOwnership(uint256 _tokenId, address _newOwner) public {
+        // Checks if the caller is the current owner of the NFT
+        require(nfts[_tokenId].owner == msg.sender, "You don't own this NFT");
+
+        // Update the owner of the NFT
+        nfts[_tokenId].owner = _newOwner;
+    }
 }
