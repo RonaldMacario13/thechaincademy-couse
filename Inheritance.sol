@@ -15,5 +15,18 @@ abstract contract People {
         return message;
     }
 
+    function ageStage() public view virtual returns (string memory) {
+        if (age < 3) {
+            return "You are a baby";
+        } else if (age < 13) {
+            return "You are a child";
+        } else if (age >= 13 && age < 18) {
+            return "You are a teenager";
+        } else if (age >= 18 && age < 65) {
+            return "You are an adult";
+        } else {
+            return "You are an elderly person";
+        }
+    }
 
 }
