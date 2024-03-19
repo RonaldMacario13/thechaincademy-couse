@@ -14,4 +14,7 @@ contract BasicNFT {
 
     // Mapping from token ID to NFT
     mapping(uint256 => NFT) public nfts;
+
+    // Mapping to store minting permissions
+    mapping(address => bool) public minters;
 }
