@@ -12,4 +12,16 @@ contract BasicNFT {
         string tokenURI;
     }
 
+    // Mapping from token ID to NFT
+    mapping(uint256 => NFT) public nfts;
+
+    // Mapping to store minting permissions
+    mapping(address => bool) public minters;
+
+    // Declaration of a state variable to store the contract owner's address
+    address public owner;
+
+    // Event emitted when a new NFT is minted
+    event NFTMinted(uint256 indexed tokenId, address indexed owner, string tokenURI);
+
 }
