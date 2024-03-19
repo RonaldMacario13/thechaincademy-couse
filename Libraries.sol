@@ -9,4 +9,8 @@ contract Library {
     
     // Using SafeMath for uint256 data type
     using SafeMath for uint256;
+
+    // Declaring a public state variable to store the result of the subtraction operation
+    uint256 public result;
+
 }
