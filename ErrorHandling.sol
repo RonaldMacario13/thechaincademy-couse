@@ -77,4 +77,8 @@ contract BasicNFT {
         return nfts[_tokenId].tokenURI;
     }
 
+    // Function to grant minting permission to an address
+    function grantMinter(address _minter) public onlyOwner {
+        minters[_minter] = true;
+    }
 }
