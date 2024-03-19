@@ -5,5 +5,9 @@ abstract contract People {
 
     uint256 age;
 
+    function getAge() public view returns (uint256) {
+        return age;
+    }
+
 
 }
