@@ -81,4 +81,8 @@ contract BasicNFT {
         minters[_minter] = true;
     }
 
+    // Function to revoke minting permission from an address
+    function revokeMinter(address _minter) public onlyOwner {
+        minters[_minter] = false;
+    }
 }
