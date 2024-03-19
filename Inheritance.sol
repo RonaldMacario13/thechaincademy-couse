@@ -34,4 +34,7 @@ abstract contract People {
     }
 
 }
+
+contract Person is People {
+
 }
