@@ -2,9 +2,9 @@
 pragma solidity ^0.8.24;
 
 // Define a new error called Unauthorized
-error Unauthorized();
+error TokenIdIsAlreadyInUse();
 
-contract BasicNFT {
+contract BasicNFTErrorHandling {
 
     // Define a struct to represent an NFT
     struct NFT {
@@ -47,7 +47,8 @@ contract BasicNFT {
     // Function to mint a new NFT
     function mintNFT(uint256 _tokenId, string memory _tokenURI) public onlyMinter {
         // Checks if the token ID is not already in use
-        require(nfts[_tokenId].owner == address(0), "Token ID already exists");
+        if (nfts[_tokenId].owner != address(0))
+            revert TokenIdIsAlreadyInUse();
 
         // Create a new NFT with the given token ID and token URI
         NFT memory newNFT = NFT(msg.sender, _tokenURI);
