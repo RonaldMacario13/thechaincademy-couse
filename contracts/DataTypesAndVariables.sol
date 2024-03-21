@@ -4,7 +4,7 @@ pragma solidity ^0.8.24;
 // Define a new error called Unauthorized
 error Unauthorized();
 
-contract BasicNFTDataTypesAndVariables {
+contract DataTypesAndVariables {
 
     // Define a struct to represent an NFT
     struct NFT {
