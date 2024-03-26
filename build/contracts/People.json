@@ -1,0 +1,1338 @@
+{
+  "contractName": "People",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "getAge",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "yearPasses",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ageStage",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.25+commit.b61c2a91\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ageStage\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAge\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"yearPasses\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Inheritance.sol\":\"People\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Inheritance.sol\":{\"keccak256\":\"0x92131ca740510d7726c6a642831554c2045a991915d606c430697caa83bcd4fe\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://105d861bace9dcf859c21e1a4cd26c199e0da26204fe79caa6740fbe5cfe1982\",\"dweb:/ipfs/QmSbxqrRqiq4TnEXyCgHR3yaa7DZMcBcDnDvkUT6Bzdtp2\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity ^0.8.24;\r\n\r\nabstract contract People {\r\n\r\n    uint256 age;\r\n\r\n    function getAge() public view returns (uint256) {\r\n        return age;\r\n    }\r\n\r\n    function yearPasses() public virtual returns (string memory) {\r\n         string memory message = \"Happy Birthday!\";\r\n        age++;\r\n        return message;\r\n    }\r\n\r\n    function ageStage() public view virtual returns (string memory) {\r\n        if (age < 3) {\r\n            return \"You are a baby\";\r\n        } else if (age < 13) {\r\n            return \"You are a child\";\r\n        } else if (age >= 13 && age < 18) {\r\n            return \"You are a teenager\";\r\n        } else if (age >= 18 && age < 65) {\r\n            return \"You are an adult\";\r\n        } else {\r\n            return \"You are an elderly person\";\r\n        }\r\n    }\r\n\r\n    constructor (uint256 _age) {\r\n        age = _age;\r\n    }\r\n\r\n}\r\n\r\ncontract Person is People {\r\n\r\n    function yearPasses() public override returns (string memory) {\r\n         string memory message = \"Congratulations, Happy Birthday!\";\r\n        age++;\r\n        return message;\r\n    }\r\n\r\n    constructor(uint256 _age) People(_age) {\r\n\r\n    }\r\n\r\n}",
+  "sourcePath": "C:\\Users\\ronal\\Documents\\Projetos\\thechaincademy-couse\\contracts\\Inheritance.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Inheritance.sol",
+    "exportedSymbols": {
+      "People": [
+        624
+      ],
+      "Person": [
+        652
+      ]
+    },
+    "id": 653,
+    "license": "GPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 543,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "37:24:4"
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "canonicalName": "People",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 624,
+        "linearizedBaseContracts": [
+          624
+        ],
+        "name": "People",
+        "nameLocation": "83:6:4",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 545,
+            "mutability": "mutable",
+            "name": "age",
+            "nameLocation": "107:3:4",
+            "nodeType": "VariableDeclaration",
+            "scope": 624,
+            "src": "99:11:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 544,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "99:7:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 552,
+              "nodeType": "Block",
+              "src": "167:29:4",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 550,
+                    "name": "age",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 545,
+                    "src": "185:3:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 549,
+                  "id": 551,
+                  "nodeType": "Return",
+                  "src": "178:10:4"
+                }
+              ]
+            },
+            "functionSelector": "967e6e65",
+            "id": 553,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAge",
+            "nameLocation": "128:6:4",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 546,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "134:2:4"
+            },
+            "returnParameters": {
+              "id": 549,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 548,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 553,
+                  "src": "158:7:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 547,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "158:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "157:9:4"
+            },
+            "scope": 624,
+            "src": "119:77:4",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 567,
+              "nodeType": "Block",
+              "src": "265:102:4",
+              "statements": [
+                {
+                  "assignments": [
+                    559
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 559,
+                      "mutability": "mutable",
+                      "name": "message",
+                      "nameLocation": "291:7:4",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 567,
+                      "src": "277:21:4",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string"
+                      },
+                      "typeName": {
+                        "id": 558,
+                        "name": "string",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "277:6:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_storage_ptr",
+                          "typeString": "string"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 561,
+                  "initialValue": {
+                    "hexValue": "486170707920426972746864617921",
+                    "id": 560,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "301:17:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_ca33c87dda2352652b7c68530ed43dc87291be87de423261321f1643487e5ce4",
+                      "typeString": "literal_string \"Happy Birthday!\""
+                    },
+                    "value": "Happy Birthday!"
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "277:41:4"
+                },
+                {
+                  "expression": {
+                    "id": 563,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "329:5:4",
+                    "subExpression": {
+                      "id": 562,
+                      "name": "age",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 545,
+                      "src": "329:3:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 564,
+                  "nodeType": "ExpressionStatement",
+                  "src": "329:5:4"
+                },
+                {
+                  "expression": {
+                    "id": 565,
+                    "name": "message",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 559,
+                    "src": "352:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory_ptr",
+                      "typeString": "string memory"
+                    }
+                  },
+                  "functionReturnParameters": 557,
+                  "id": 566,
+                  "nodeType": "Return",
+                  "src": "345:14:4"
+                }
+              ]
+            },
+            "functionSelector": "e18caf14",
+            "id": 568,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "yearPasses",
+            "nameLocation": "213:10:4",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 554,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "223:2:4"
+            },
+            "returnParameters": {
+              "id": 557,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 556,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 568,
+                  "src": "250:13:4",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 555,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "250:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "249:15:4"
+            },
+            "scope": 624,
+            "src": "204:163:4",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 612,
+              "nodeType": "Block",
+              "src": "439:391:4",
+              "statements": [
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 575,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 573,
+                      "name": "age",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 545,
+                      "src": "454:3:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "hexValue": "33",
+                      "id": 574,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "460:1:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_3_by_1",
+                        "typeString": "int_const 3"
+                      },
+                      "value": "3"
+                    },
+                    "src": "454:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "condition": {
+                      "commonType": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "id": 581,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "id": 579,
+                        "name": "age",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 545,
+                        "src": "523:3:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "<",
+                      "rightExpression": {
+                        "hexValue": "3133",
+                        "id": 580,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "529:2:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_13_by_1",
+                          "typeString": "int_const 13"
+                        },
+                        "value": "13"
+                      },
+                      "src": "523:8:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "falseBody": {
+                      "condition": {
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 591,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 587,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "id": 585,
+                            "name": "age",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 545,
+                            "src": "594:3:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": ">=",
+                          "rightExpression": {
+                            "hexValue": "3133",
+                            "id": 586,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "601:2:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_13_by_1",
+                              "typeString": "int_const 13"
+                            },
+                            "value": "13"
+                          },
+                          "src": "594:9:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "&&",
+                        "rightExpression": {
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 590,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "id": 588,
+                            "name": "age",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 545,
+                            "src": "607:3:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "<",
+                          "rightExpression": {
+                            "hexValue": "3138",
+                            "id": 589,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "613:2:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_18_by_1",
+                              "typeString": "int_const 18"
+                            },
+                            "value": "18"
+                          },
+                          "src": "607:8:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "src": "594:21:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "falseBody": {
+                        "condition": {
+                          "commonType": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "id": 601,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "commonType": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            "id": 597,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "leftExpression": {
+                              "id": 595,
+                              "name": "age",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 545,
+                              "src": "681:3:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "nodeType": "BinaryOperation",
+                            "operator": ">=",
+                            "rightExpression": {
+                              "hexValue": "3138",
+                              "id": 596,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "688:2:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_18_by_1",
+                                "typeString": "int_const 18"
+                              },
+                              "value": "18"
+                            },
+                            "src": "681:9:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "&&",
+                          "rightExpression": {
+                            "commonType": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            "id": 600,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "leftExpression": {
+                              "id": 598,
+                              "name": "age",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 545,
+                              "src": "694:3:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "nodeType": "BinaryOperation",
+                            "operator": "<",
+                            "rightExpression": {
+                              "hexValue": "3635",
+                              "id": 599,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "700:2:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_65_by_1",
+                                "typeString": "int_const 65"
+                              },
+                              "value": "65"
+                            },
+                            "src": "694:8:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "src": "681:21:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "falseBody": {
+                          "id": 607,
+                          "nodeType": "Block",
+                          "src": "762:61:4",
+                          "statements": [
+                            {
+                              "expression": {
+                                "hexValue": "596f752061726520616e20656c6465726c7920706572736f6e",
+                                "id": 605,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "string",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "784:27:4",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_stringliteral_ca312d6200565f2e5b2e0178d1f7216dfe1b34cca76c86b746d57978409a8680",
+                                  "typeString": "literal_string \"You are an elderly person\""
+                                },
+                                "value": "You are an elderly person"
+                              },
+                              "functionReturnParameters": 572,
+                              "id": 606,
+                              "nodeType": "Return",
+                              "src": "777:34:4"
+                            }
+                          ]
+                        },
+                        "id": 608,
+                        "nodeType": "IfStatement",
+                        "src": "677:146:4",
+                        "trueBody": {
+                          "id": 604,
+                          "nodeType": "Block",
+                          "src": "704:52:4",
+                          "statements": [
+                            {
+                              "expression": {
+                                "hexValue": "596f752061726520616e206164756c74",
+                                "id": 602,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "string",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "726:18:4",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_stringliteral_3896ffa7c60792ff53544bbcc6bd61a30f29361b4435d1d8b85d213559628ab0",
+                                  "typeString": "literal_string \"You are an adult\""
+                                },
+                                "value": "You are an adult"
+                              },
+                              "functionReturnParameters": 572,
+                              "id": 603,
+                              "nodeType": "Return",
+                              "src": "719:25:4"
+                            }
+                          ]
+                        }
+                      },
+                      "id": 609,
+                      "nodeType": "IfStatement",
+                      "src": "590:233:4",
+                      "trueBody": {
+                        "id": 594,
+                        "nodeType": "Block",
+                        "src": "617:54:4",
+                        "statements": [
+                          {
+                            "expression": {
+                              "hexValue": "596f75206172652061207465656e61676572",
+                              "id": 592,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "string",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "639:20:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_stringliteral_b6d8c2bc653c24eebd75843bedbc38615097e4659baeeed606dedfb47a9cc97b",
+                                "typeString": "literal_string \"You are a teenager\""
+                              },
+                              "value": "You are a teenager"
+                            },
+                            "functionReturnParameters": 572,
+                            "id": 593,
+                            "nodeType": "Return",
+                            "src": "632:27:4"
+                          }
+                        ]
+                      }
+                    },
+                    "id": 610,
+                    "nodeType": "IfStatement",
+                    "src": "519:304:4",
+                    "trueBody": {
+                      "id": 584,
+                      "nodeType": "Block",
+                      "src": "533:51:4",
+                      "statements": [
+                        {
+                          "expression": {
+                            "hexValue": "596f75206172652061206368696c64",
+                            "id": 582,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "string",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "555:17:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_stringliteral_e3734c18eb89c604ed8b60e224400c6c94d32152241d7fa9644e3f51b16149fd",
+                              "typeString": "literal_string \"You are a child\""
+                            },
+                            "value": "You are a child"
+                          },
+                          "functionReturnParameters": 572,
+                          "id": 583,
+                          "nodeType": "Return",
+                          "src": "548:24:4"
+                        }
+                      ]
+                    }
+                  },
+                  "id": 611,
+                  "nodeType": "IfStatement",
+                  "src": "450:373:4",
+                  "trueBody": {
+                    "id": 578,
+                    "nodeType": "Block",
+                    "src": "463:50:4",
+                    "statements": [
+                      {
+                        "expression": {
+                          "hexValue": "596f752061726520612062616279",
+                          "id": 576,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "string",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "485:16:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_stringliteral_3a75c956dad8cfe171bd936649bee9d11cdafd0f4d03d584bbc9af6c15561d0b",
+                            "typeString": "literal_string \"You are a baby\""
+                          },
+                          "value": "You are a baby"
+                        },
+                        "functionReturnParameters": 572,
+                        "id": 577,
+                        "nodeType": "Return",
+                        "src": "478:23:4"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "functionSelector": "54d32e8c",
+            "id": 613,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "ageStage",
+            "nameLocation": "384:8:4",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 569,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "392:2:4"
+            },
+            "returnParameters": {
+              "id": 572,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 571,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 613,
+                  "src": "424:13:4",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 570,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "424:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "423:15:4"
+            },
+            "scope": 624,
+            "src": "375:455:4",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 622,
+              "nodeType": "Block",
+              "src": "865:29:4",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 620,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 618,
+                      "name": "age",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 545,
+                      "src": "876:3:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 619,
+                      "name": "_age",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 615,
+                      "src": "882:4:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "876:10:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 621,
+                  "nodeType": "ExpressionStatement",
+                  "src": "876:10:4"
+                }
+              ]
+            },
+            "id": 623,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 616,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 615,
+                  "mutability": "mutable",
+                  "name": "_age",
+                  "nameLocation": "859:4:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 623,
+                  "src": "851:12:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 614,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "851:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "850:14:4"
+            },
+            "returnParameters": {
+              "id": 617,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "865:0:4"
+            },
+            "scope": 624,
+            "src": "838:56:4",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 653,
+        "src": "65:834:4",
+        "usedErrors": [],
+        "usedEvents": []
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 625,
+              "name": "People",
+              "nameLocations": [
+                "922:6:4"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 624,
+              "src": "922:6:4"
+            },
+            "id": 626,
+            "nodeType": "InheritanceSpecifier",
+            "src": "922:6:4"
+          }
+        ],
+        "canonicalName": "Person",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 652,
+        "linearizedBaseContracts": [
+          652,
+          624
+        ],
+        "name": "Person",
+        "nameLocation": "912:6:4",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "baseFunctions": [
+              568
+            ],
+            "body": {
+              "id": 641,
+              "nodeType": "Block",
+              "src": "1000:119:4",
+              "statements": [
+                {
+                  "assignments": [
+                    633
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 633,
+                      "mutability": "mutable",
+                      "name": "message",
+                      "nameLocation": "1026:7:4",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 641,
+                      "src": "1012:21:4",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string"
+                      },
+                      "typeName": {
+                        "id": 632,
+                        "name": "string",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1012:6:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_storage_ptr",
+                          "typeString": "string"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 635,
+                  "initialValue": {
+                    "hexValue": "436f6e67726174756c6174696f6e732c20486170707920426972746864617921",
+                    "id": 634,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1036:34:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_f77a08234c21ab1bde9d20bdad959ab4e8fb81bc79dc8f228782447b06ba6516",
+                      "typeString": "literal_string \"Congratulations, Happy Birthday!\""
+                    },
+                    "value": "Congratulations, Happy Birthday!"
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1012:58:4"
+                },
+                {
+                  "expression": {
+                    "id": 637,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "1081:5:4",
+                    "subExpression": {
+                      "id": 636,
+                      "name": "age",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 545,
+                      "src": "1081:3:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 638,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1081:5:4"
+                },
+                {
+                  "expression": {
+                    "id": 639,
+                    "name": "message",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 633,
+                    "src": "1104:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory_ptr",
+                      "typeString": "string memory"
+                    }
+                  },
+                  "functionReturnParameters": 631,
+                  "id": 640,
+                  "nodeType": "Return",
+                  "src": "1097:14:4"
+                }
+              ]
+            },
+            "functionSelector": "e18caf14",
+            "id": 642,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "yearPasses",
+            "nameLocation": "947:10:4",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 628,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "967:8:4"
+            },
+            "parameters": {
+              "id": 627,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "957:2:4"
+            },
+            "returnParameters": {
+              "id": 631,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 630,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 642,
+                  "src": "985:13:4",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 629,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "985:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "984:15:4"
+            },
+            "scope": 652,
+            "src": "938:181:4",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 650,
+              "nodeType": "Block",
+              "src": "1166:10:4",
+              "statements": []
+            },
+            "id": 651,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 647,
+                    "name": "_age",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 644,
+                    "src": "1160:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                ],
+                "id": 648,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 646,
+                  "name": "People",
+                  "nameLocations": [
+                    "1153:6:4"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 624,
+                  "src": "1153:6:4"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1153:12:4"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 645,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 644,
+                  "mutability": "mutable",
+                  "name": "_age",
+                  "nameLocation": "1147:4:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 651,
+                  "src": "1139:12:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 643,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1139:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1138:14:4"
+            },
+            "returnParameters": {
+              "id": 649,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1166:0:4"
+            },
+            "scope": 652,
+            "src": "1127:49:4",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 653,
+        "src": "903:278:4",
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "src": "37:1144:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.25+commit.b61c2a91.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2024-03-22T13:44:46.707Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
