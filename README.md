@@ -3,6 +3,13 @@
 ## Project Overview
 The project in question is a repository used to store progress and assignments completed during a course at Chaincademy. The main objective of this repository is to serve as an organized way to document progress in the course and also as a platform to submit tasks assigned throughout the study program.
 
+## Technologies Used
+
+  - NodeJS
+  - Solidity
+  - Truffle
+  - Ganache
+  - Remix IDE
 
 # Documentação dos conceitos da tecnologia blockchain
 
