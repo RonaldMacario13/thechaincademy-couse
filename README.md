@@ -11,6 +11,46 @@ The project in question is a repository used to store progress and assignments c
   - Ganache
   - Remix IDE
 
+## Instruções de Configuração
+Forneça um passo a passo detalhado de como configurar o ambiente de desenvolvimento e como executar o projeto localmente.
+
+  ### 1. Clone the Repository:
+
+  ```
+  git clone https://github.com/RonaldMacario13/thechaincademy-couse.git
+  ```
+
+  ### 2. Install Dependencies:
+
+  ```
+  npm install
+  ```
+
+  ### 3. Set Up Ganache:
+
+  - Install Ganache locally on your machine.
+  - Launch Ganache and ensure it's running on localhost:7545.
+
+  ### 4. Step: Running the Smart Contract Locally
+
+  - Compile the smart contract:
+
+  ```
+  truffle compile
+  ```
+  
+  - Contract Migration:
+  
+    - Migrate the contract to the local Ganache blockchain:
+
+    ```
+    truffle migrate --reset
+    ```
+
+    - Verify that the contract was successfully migrated and note the contract address.
+
+#
+
 # Documentação dos conceitos da tecnologia blockchain
 
 ## 1. Introdução
