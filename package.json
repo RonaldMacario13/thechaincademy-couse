@@ -1,0 +1,17 @@
+{
+  "name": "thechaincademy",
+  "version": "1.0.0",
+  "description": "thechaincademy",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "truffle": "^5.11.5"
+  }
+}
