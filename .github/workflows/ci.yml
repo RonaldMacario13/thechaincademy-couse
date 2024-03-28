@@ -1,0 +1,39 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Linting
+        run: npm run lint
+
+      - name: Compilation
+        run: npm run compile
+
+      - name: Unit Testing
+        run: npm run test
+
+      - name: Coverage Analysis
+        run: npm run coverage
+
+      - name: Static Analysis
+        run: npm run security-audit
+
+      # Optional: Deployment Step
+      # - name: Deploy Contract
+      #   run: npm run deploy
