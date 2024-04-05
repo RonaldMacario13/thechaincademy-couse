@@ -14,8 +14,20 @@
                 <button onclick="connectContract()">Connect to Contract</button>
                 <p id="contractArea"></p>
                 <button onclick="readContract()">Get data from Contract</button>
+                <p id="dataArea"></p>
             </div>
-            </div>
-        </form>
+        </div>
+
+        <!-- <script src="index.js"></script> -->
+        <script>
+            //Connect metamsk
+
+            const connectMetamask = async () => {
+            if(window.ethereum !== "undefined") {
+                const accounts = await ethereum.request({method: "eth_requestAccounts"});
+                account = accounts[0];
+                document.getElementById("accountArea").innerHTML = account;
+            }
+            }
     </body>
 </html>
