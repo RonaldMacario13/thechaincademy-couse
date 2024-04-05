@@ -6,19 +6,14 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <form>
-            <h1>Login</h1>
-            <div class="textBoxdiv">
-                <input type="text" placeholder="Username">
-            </div>
-            <div class="textBoxdiv">
-                <input type="password" placeholder="Password">
-            </div>
-            <input type="submit" value="Login" class="loginButton">
-            <div class="signup">
-                Don't have an account? 
-                </br>
-                <a href="#">Sign up</a>
+        <div class="login-container">
+            <h2>Login</h2>
+            <div class="button-container">
+                <button onclick="connectMetamask()">Connect to Metamask</button>
+                <p id="accountArea"></p>
+                <button onclick="connectContract()">Connect to Contract</button>
+                <p id="contractArea"></p>
+                <button onclick="readContract()">Get data from Contract</button>
             </div>
             </div>
         </form>
