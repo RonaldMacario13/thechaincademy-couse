@@ -12,6 +12,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@synthetixio/synpress": "^3.7.2-beta.10",
     "truffle": "^5.11.5"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
   }
 }
