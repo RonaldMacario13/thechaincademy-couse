@@ -4,7 +4,7 @@ pragma solidity ^0.8.24;
 // Define a new error called Unauthorized
 error Unauthorized();
 
-contract BasicNFT {
+contract DataTypesAndVariables {
 
     // Define a struct to represent an NFT
     struct NFT {
@@ -14,9 +14,6 @@ contract BasicNFT {
 
     // Mapping from token ID to NFT
     mapping(uint256 => NFT) public nfts;
-
-    // Mapping to store minting permissions
-    mapping(address => bool) public minters;
 
     // Declaration of a state variable to store the contract owner's address
     address public owner;
@@ -28,24 +25,12 @@ contract BasicNFT {
     constructor() {
         // Set the contract owner
         owner = msg.sender;
-        // Allow owner to mint NFTs by default
-        minters[msg.sender] = true;
-    }
-
-    // Modifier to check if the caller is the owner
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Only the owner can perform this action");
-        _;
-    }
-
-    // Modifier to check if the caller is allowed to mint NFTs
-    modifier onlyMinter() {
-        require(minters[msg.sender], "You are not authorized to mint NFTs");
-        _;
     }
 
     // Function to mint a new NFT
-    function mintNFT(uint256 _tokenId, string memory _tokenURI) public onlyMinter {
+    function mintNFT(uint256 _tokenId, string memory _tokenURI) public {
+        // Checks if the caller is the owner
+        require(msg.sender == owner, "Only the owner can mint NFTs");
         // Checks if the token ID is not already in use
         require(nfts[_tokenId].owner == address(0), "Token ID already exists");
 
@@ -58,7 +43,7 @@ contract BasicNFT {
     }
 
     // Function to transfer ownership of an NFT
-    function transferOwnership(uint256 _tokenId, address _newOwner) public {
+    function transferNFT(uint256 _tokenId, address _newOwner) public {
         // Checks if the caller is the current owner of the NFT
         require(nfts[_tokenId].owner == msg.sender, "You don't own this NFT");
 
@@ -74,15 +59,5 @@ contract BasicNFT {
     // Function to get the token URI of an NFT
     function getTokenURI(uint256 _tokenId) public view returns (string memory) {
         return nfts[_tokenId].tokenURI;
-    }
-
-    // Function to grant minting permission to an address
-    function grantMinter(address _minter) public onlyOwner {
-        minters[_minter] = true;
-    }
-
-    // Function to revoke minting permission from an address
-    function revokeMinter(address _minter) public onlyOwner {
-        minters[_minter] = false;
     }
 }

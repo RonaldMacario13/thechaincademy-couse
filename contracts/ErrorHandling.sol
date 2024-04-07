@@ -4,7 +4,7 @@ pragma solidity ^0.8.24;
 // Define a new error called Unauthorized
 error TokenIdIsAlreadyInUse();
 
-contract BasicNFT {
+contract BasicNFTErrorHandling {
 
     // Define a struct to represent an NFT
     struct NFT {
