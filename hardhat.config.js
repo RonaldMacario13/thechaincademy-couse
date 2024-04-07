@@ -2,7 +2,7 @@
 require("@nomicfoundation/hardhat-toolbox");
 
 // MetaMask private key
-metamask_private_key = "0x" + "6d1dccf82564fd00d99f862beed060619e9a2d887b7e6729ae8745c72d87b05b"
+metamask_private_key = "0x" + "PRIVATE_KEY"
 
 /** 
  * Export the Hardhat configuration
