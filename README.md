@@ -49,7 +49,14 @@ Forneça um passo a passo detalhado de como configurar o ambiente de desenvolvim
 
     - Verify that the contract was successfully migrated and note the contract address.
 
-#
+## Deploying to TestNet
+
+To deploy to TestNet, you need to put the metamask private key in place of "PRIVATE_KEY" in hardhat.config.js
+
+And run:
+```
+npx hardhat run .\scripts\sample-scripts.js --network sepolia
+```
 
 # Documentação dos conceitos da tecnologia blockchain
 
