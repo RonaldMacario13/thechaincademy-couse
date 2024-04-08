@@ -12,6 +12,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@synthetixio/synpress": "^3.7.2-beta.10",
+    "hardhat": "^2.22.2",
     "truffle": "^5.11.5"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
   }
 }

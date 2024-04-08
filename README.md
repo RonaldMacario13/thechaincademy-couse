@@ -1,4 +1,4 @@
-# Solidity Roadmap E2E Course - ChainCademy
+# Solidity Roadmap E2E Course - ChainCademy - Release: V1
 
 ## Project Overview
 The project in question is a repository used to store progress and assignments completed during a course at Chaincademy. The main objective of this repository is to serve as an organized way to document progress in the course and also as a platform to submit tasks assigned throughout the study program.
@@ -49,7 +49,14 @@ Forneça um passo a passo detalhado de como configurar o ambiente de desenvolvim
 
     - Verify that the contract was successfully migrated and note the contract address.
 
-#
+## Deploying to TestNet
+
+To deploy to TestNet, you need to put the metamask private key in place of "PRIVATE_KEY" in hardhat.config.js
+
+And run:
+```
+npx hardhat run .\scripts\sample-scripts.js --network sepolia
+```
 
 # Documentação dos conceitos da tecnologia blockchain
 
